@@ -7,22 +7,37 @@ function CreateProblemlist(title,content) {
     return fetch(apidomain + '/problemlist', {//這裡要按照api的網址
         method: 'POST',
         headers: {
+            'Authorization': token
+
         },
         body: data,
     })
         .then(res => res.json())
         .then(res => {
             /*完成後接收傳回來的資料*/
+            console.log(res);
+            return res
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }
+async function createProblemlist() {
+    var data;
+    await CreateProblemlist().then(r => data = r);
+    
+    CreateProblemlist()
+        .then(r => data = r)
+    data = r
+    console.log(data);
+    printalldata(data);
+}
+getRole();
 //取得使用者問題回報
 function GetUserProblemlist() {
     const token = getCookie('token')//clien端裡面的cookie抓取token的值
     console.log(token)
-    return fetch(apidomain + '/problemlistu/未解決', {//這裡要按照api的網址
+    return fetch(apidomain + '/problemlistu/p_1', {//這裡要按照api的網址
         method: 'GET',
         headers:{
             'Authorization': token
@@ -41,7 +56,7 @@ function GetUserProblemlist() {
 function GetAllProblemlist() {
     const token = getCookie('token')//clien端裡面的cookie抓取token的值
     console.log(token)
-    return fetch(apidomain + '/problemlistu/未解決', {//這裡要按照api的網址
+    return fetch(apidomain + '/problemlistu/p_1', {//這裡要按照api的網址
         method: 'GET',
         headers:{
             'Authorization': token
@@ -102,6 +117,6 @@ function DeleteProblemlist(id) {
             return res;
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }

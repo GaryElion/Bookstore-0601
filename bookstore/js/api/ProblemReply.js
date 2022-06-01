@@ -26,6 +26,7 @@ function CreateProblemReply(problemId,reply) {
     return fetch(apidomain + '/problemreply', {//這裡要按照api的網址
         method: 'POST',
         headers: {
+            'Authorization': token
         },
         body: data,
     })
@@ -36,7 +37,7 @@ function CreateProblemReply(problemId,reply) {
             /*完成後接收傳回來的資料*/
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 
 }
@@ -86,6 +87,6 @@ function DeleteProblemReply(id) {
             return res;
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }

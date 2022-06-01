@@ -6,6 +6,7 @@ function CreateAnnouncement(title,content) {
     return fetch(apidomain + '/announcement', {//這裡要按照api的網址
         method: 'POST',
         headers: {
+            'Authorization': token
         },
         body: data,
     })
@@ -16,9 +17,8 @@ function CreateAnnouncement(title,content) {
             return res
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
-
 }
 //取得所有公告
 function GetAllAnnouncement() {

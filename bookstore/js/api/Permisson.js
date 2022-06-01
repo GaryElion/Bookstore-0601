@@ -10,6 +10,7 @@ function CreatePermisson(roleId, functionId) {
     return fetch(apidomain + '/permisson/1', {//這裡要按照api的網址
         method: 'POST',
         headers: {
+            'Authorization': token
         },
         body: data,
     })
@@ -21,7 +22,7 @@ function CreatePermisson(roleId, functionId) {
 
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 
 }
@@ -31,6 +32,9 @@ function GetPermisson(permisson) {
     const token = getCookie('token')
     return fetch(apidomain + '/permisson/1/' + permisson, {//這裡要按照api的網址
         method: 'GET',
+        headers: {
+            'Authorization': token
+        },
     })
         .then(res => res.json())
         .then(res => {
@@ -38,7 +42,7 @@ function GetPermisson(permisson) {
             return res
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }
 //刪除角色該權限
@@ -56,6 +60,6 @@ function DeletePermisson(id) {
             return res;
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }

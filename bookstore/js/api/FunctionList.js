@@ -5,6 +5,9 @@ function GetAllFunction(fun) {
     const token = getCookie('token')
     return fetch(apidomain + '/function/' + fun, {//這裡要按照api的網址
         method: 'GET',
+        headers: {
+            'Authorization': token
+        },
     })
         .then(res => res.json())
         .then(res => {
@@ -12,7 +15,7 @@ function GetAllFunction(fun) {
             return res
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }
 //新增功能
@@ -24,6 +27,7 @@ function CreateFunction(functionName) {
     return fetch(apidomain + '/function', {//這裡要按照api的網址
         method: 'POST',
         headers: {
+            'Authorization': token
         },
         body: data,
     })
@@ -35,7 +39,7 @@ function CreateFunction(functionName) {
 
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 
 }
@@ -85,6 +89,6 @@ function DeleteFunction(id) {
             return res;
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }

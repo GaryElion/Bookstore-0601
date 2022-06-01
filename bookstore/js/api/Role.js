@@ -32,7 +32,7 @@ async function getRole() {
 }
 getRole();
 function printalldata(data){
-    var text = document.getElementsByClassName("text");
+    var text = document.getElementById("role");
 
     //如果data裡面有data代表資料正確
     if(data.hasOwnProperty('data')){
@@ -41,6 +41,7 @@ function printalldata(data){
             console.log(dataa[i]);//印出每筆資料內容
             console.log(dataa[i].Name);//取出單一資料
         }
+        text.innerHTML='<option>'+text+'</option>';
     }
 
 }
@@ -85,7 +86,7 @@ function CreateRole(roleName) {
             return res
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }
 // CreateRole
@@ -159,7 +160,7 @@ function DeleteRole(id) {
             return res;
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }
 // DeleteRole

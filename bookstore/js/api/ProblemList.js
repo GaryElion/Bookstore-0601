@@ -7,6 +7,7 @@ function CreateProblemlist(title,content) {
     return fetch(apidomain + '/problemlist', {//這裡要按照api的網址
         method: 'POST',
         headers: {
+            'Authorization': token
         },
         body: data,
     })
@@ -17,7 +18,7 @@ function CreateProblemlist(title,content) {
             return res
         })
         .catch(e => {
-            console.error('Error:', error)
+            console.error('Error:', e)
         })
 }
 //取得使用者問題回報
