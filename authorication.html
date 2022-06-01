@@ -1,0 +1,247 @@
+<div class="contentblock">
+  <div class="row">
+    <!--header -->
+    <div class="header-title">權限管理</div>
+    <div class="content-header">
+      <div class="search">
+        <span id="search-send">
+          <svg
+            width="25"
+            height="25"
+            viewBox="0 0 25 25"
+            fill="rgba(8, 8, 8, 1)"
+          >
+            <path
+              d="M20.07 18.93l-4.16-4.15a6 6 0 1 0-.88.88l4.15 4.16a.62.62 0 1 0 .89-.89zM6.5 11a4.75 4.75 0 1 1 9.5 0 4.75 4.75 0 0 1-9.5 0z"
+            ></path>
+          </svg>
+        </span>
+        <input type="text" placeholder="搜尋使用者" />
+      </div>
+      <div class="flex-nowrap">
+        <div class="function-btn p-10" id="createuser">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-plus-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+          新增使用者
+        </div>
+        <div class="function-btn p-10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-plus-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+          刪除使用者
+        </div>
+      </div>
+    </div>
+    <!-- Table -->
+    <div class="tableblock">
+      <table class="content-table">
+        <thead>
+          <th class="table-item">使用者名稱</th>
+          <th class="table-item">使用者帳號</th>
+          <th class="table-item">身分等級</th>
+          <th class="table-item">備註</th>
+        </thead>
+        <tbody>
+          <tr class="item">
+            <div>
+              <td class="flex-nowrap">
+                <div class="flex-center checkitem itemnone">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="30"
+                    height="30"
+                    fill="white"
+                    class="bi bi-person-x"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"
+                    />
+                  </svg>
+                </div>
+                <div class="text">SKY</div>
+              </td>
+              <td>
+                <div class="text">linskbying</div>
+              </td>
+              <td>
+                <div class="text">Highest</div>
+              </td>
+              <td>
+                <div class="text">最高管理員</div>
+              </td>
+            </div>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div id="CreateModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header w-100">
+      <span id="closemodal">&times;</span>
+    </div>
+    <div class="modal-body">
+      <table class="modal-table">
+        <thead>
+          <tr>
+            <th>使用者名稱</th>
+            <th>使用者帳號</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <img
+                  src="img/membericon.jpg"
+                  width="50px"
+                  height="px"
+                  style="border-radius: 50%"
+                />
+                <span>linskybing</span>
+              </div>
+            </td>
+            <td>asdf</td>
+            <td>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="green"
+                class="bi bi-plus-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                />
+              </svg>
+            </td>
+          </tr>
+          <tr class="usercontent">
+            <td colspan="3">
+              <div class="inputuser closeinput">
+                <form>
+                  <div class="formgroup">
+                    <label for="authselect">允許權限：</label>
+                    <div class="checkboxgroup">
+                      <input type="checkbox" id="c1" name="auth" />
+                      <label for="c1"><span>權限管理</span></label>
+                      <input type="checkbox" id="c2" name="auth" />
+                      <label for="c2"><span>公告管理</span></label>
+                      <input type="checkbox" id="c3" name="auth" />
+                      <label for="c3"><span>報表分析</span></label>
+                      <input type="checkbox" id="c4" name="auth" />
+                      <label for="c4"><span>問題回報</span></label>
+                    </div>
+                  </div>
+                  <div class="formgroup">
+                    <label for="authexplain">備註：</label>
+                    <textarea></textarea>
+                  </div>
+                  <div class="formgroup">
+                    <button class="formbtn">新增</button>
+                  </div>
+                </form>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <img
+                  src="img/membericon.jpg"
+                  width="50px"
+                  height="px"
+                  style="border-radius: 50%"
+                />
+                <span>linskybing</span>
+              </div>
+            </td>
+            <td>asdf</td>
+            <td>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="green"
+                class="bi bi-plus-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                />
+              </svg>
+            </td>
+          </tr>
+          <tr class="usercontent">
+            <td colspan="3">
+              <div class="inputuser closeinput">
+                <form>
+                  <div class="formgroup">
+                    <label for="authselect">允許權限：</label>
+                    <div class="checkboxgroup">
+                      <input type="checkbox" id="c1" name="auth" />
+                      <label for="c1"><span>權限管理</span></label>
+                      <input type="checkbox" id="c2" name="auth" />
+                      <label for="c2"><span>公告管理</span></label>
+                      <input type="checkbox" id="c3" name="auth" />
+                      <label for="c3"><span>報表分析</span></label>
+                      <input type="checkbox" id="c4" name="auth" />
+                      <label for="c4"><span>問題回報</span></label>
+                    </div>
+                  </div>
+                  <div class="formgroup">
+                    <label for="authexplain">備註：</label>
+                    <textarea></textarea>
+                  </div>
+                  <div class="formgroup">
+                    <button class="formbtn">新增</button>
+                  </div>
+                </form>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

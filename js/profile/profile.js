@@ -1,3 +1,20 @@
+if (getCookie('Image')) {
+   document.querySelector('.membericon .icon img').src = "http://localhost:8080/images/Members/" + getCookie('Image');
+}
+
+let buyer = document.getElementById('buyer_m')
+buyer.addEventListener('click', function () {
+   var ns = buyer.nextElementSibling;
+   ns.classList.toggle('close');
+   buyer.querySelector('.arrow').classList.toggle('rotate');
+})
+
+let seller = document.getElementById('seller_m')
+seller.addEventListener('click', function () {
+   var ns = seller.nextElementSibling;
+   ns.classList.toggle('close');
+   seller.querySelector('.arrow').classList.toggle('rotate');
+})
 
 //帳號
 let validmeesage = {
@@ -92,7 +109,7 @@ function displaymodal() {
                 </div>
                 <div class="formgroup">
                     <label for="editaddress">地址<span class="must">*</span></label>
-                    <input type="text" id="editaddress" value="${(userdata.Address != null) ? userdata.Address : ''}">
+                    <input type="text" id="editaddress" value="${userdata.Address}">
                 </div>
             </div>
             <div class="footer">
@@ -106,7 +123,6 @@ function displaymodal() {
             </div>
         </div>
    `;
-   console.log(userdata.Address);
    modal_content = document.querySelector('.modal-content');
    closemodal();
    senddata();

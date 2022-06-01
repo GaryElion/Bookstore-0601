@@ -5,6 +5,9 @@ var nowIndex = 0;
 var nowType = 'off';
 var tempdata = {}
 
+
+
+
 let modal = document.querySelector('.modal');
 
 
@@ -804,7 +807,7 @@ function modal_category_info() {
 //載入商品陣列
 async function GetOnProduct(search) {
     var data;
-    await GetSellerProduct(nowType).then(r => data = r);
+    await GetSellerProduct(nowType, search).then(r => data = r);
     if (data.hasOwnProperty('data')) {
         productofflist = data.data;
     }
@@ -853,7 +856,8 @@ async function GetOnProduct(search) {
             })
             onIndex += 1;
         });
-    }    
+    }
+
 
 }
 
