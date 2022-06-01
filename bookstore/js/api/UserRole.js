@@ -8,7 +8,8 @@ function GetUserRole(role) {
     })
         .then(res => res.json())
         .then(res => {
-
+            console.log(res);
+            return res
         })
         .catch(e => {
             console.error('Error:', error)

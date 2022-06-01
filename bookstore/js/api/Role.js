@@ -1,13 +1,8 @@
 const apidomain = 'http://localhost:8080'
 /*取得所有角色*/
-/**
- * 要有token
- * token放進Header.欄位名稱
- * 
- */
 function GetAllRole() {
     const token = getCookie('token')//clien端裡面的cookie抓取token的值
-    console.log(token)
+    //console.log(token)
     return fetch(apidomain + '/role', {//這裡要按照api的網址
         method: 'GET',
         headers:{
@@ -23,7 +18,33 @@ function GetAllRole() {
             console.error('Error:', e)
         })
 }
-function HELLOFETCH(){
+GetAllRole()
+//使用GetAllRole 
+async function getRole() {
+    var data;
+    await GetAllRole().then(r => data = r);
+    
+    GetAllRole()
+        .then(r => data = r)
+    data = r
+    console.log(data);
+    printalldata(data);
+}
+getRole();
+function printalldata(data){
+    var text = document.getElementsByClassName("text");
+
+    //如果data裡面有data代表資料正確
+    if(data.hasOwnProperty('data')){
+        var dataa = data.data;//取出data所有資料
+        for(i = 0 ; i < dataa.length ; i++){
+            console.log(dataa[i]);//印出每筆資料內容
+            console.log(dataa[i].Name);//取出單一資料
+        }
+    }
+
+}
+/*function HELLOFETCH(){
     fetch("網址", {
         method: 'GET',
         headers:{
@@ -42,34 +63,44 @@ function HELLOFETCH(){
             console.error('Error:', e)
         })
     }
-GetAllRole()
-/*function GetAllRoleSent(){
-    var RoleData;
-    await ReadCancel(list[id].role).then(r => RoleData => r)
-    RoleData.innerHTML=''
-}*/
+*/
+
 /*新增角色*/
 function CreateRole(roleName) {
+    const token = getCookie('token')
     var data = new FormData()
-
     data.append('RoleName', roleName)
-
+    //console.log(data)
     return fetch(apidomain + '/role', {//這裡要按照api的網址
         method: 'POST',
         headers: {
+            'Authorization': token
         },
         body: data,
     })
         .then(res => res.json())
         .then(res => {
             /*完成後接收傳回來的資料*/
-
+            console.log(res);
+            return res
         })
         .catch(e => {
             console.error('Error:', error)
         })
+}
+// CreateRole
+async function createRole() {
+    var data;
+    await CreateRole().then(r => data = r);
+    
+    CreateRole()
+        .then(r => data = r)
+    data = r
+    console.log(data);
+    printalldata(data);
 
 }
+createRole();
 /*更新角色*/
 function UpdateRole($roleupdate) {
     const token = getCookie('token')
@@ -99,8 +130,20 @@ function UpdateRole($roleupdate) {
         .catch(e => {
             console.error('Error:', e)
         })
+}
+// UpdateRole
+async function updateRole() {
+    var data;
+    await UpdateRole().then(r => data = r);
+    
+    UpdateRole()
+        .then(r => data = r)
+    data = r
+    console.log(data);
+    printalldata(data);
 
 }
+updateRole();
 /*刪除角色*/
 function DeleteRole(id) {
     const token = getCookie('token');
@@ -119,6 +162,19 @@ function DeleteRole(id) {
             console.error('Error:', error)
         })
 }
+// DeleteRole
+async function deleteRole() {
+    var data;
+    await DeleteRole().then(r => data = r);
+    
+    DeleteRole()
+        .then(r => data = r)
+    data = r
+    console.log(data);
+    printalldata(data);
+
+}
+deleteRole();
 //取得Cookie
 function getCookie(cookiename) {
     let name = cookiename + "=";
@@ -150,7 +206,7 @@ function clearCookie(name) {
 }
 
 //測試
-function GetAllProduct() {
+/*function GetAllProduct() {
     var token = getCookie('token');
     return fetch(apidomain + '/product', {
         method: 'GET',
@@ -165,59 +221,4 @@ function GetAllProduct() {
         .catch(e => {
             console.error('Error:', error)
         })
-}
-
-/*
-//使用GetAllRole 
-async function getRole() {
-    var data;
-    await GetAllRole().then(r => data = r);
-    
-    GetAllRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
-
-}
-getRole();
-
-// CreateRole
-async function createRole() {
-    var data;
-    await CreateRole().then(r => data = r);
-    
-    CreateRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
-
-}
-createRole();
-// UpdateRole
-async function updateRole() {
-    var data;
-    await UpdateRole().then(r => data = r);
-    
-    UpdateRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
-
-}
-updateRole();
-// DeleteRole
-async function deleteRole() {
-    var data;
-    await DeleteRole().then(r => data = r);
-    
-    DeleteRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
-
-}
-deleteRole();*/
+}*/

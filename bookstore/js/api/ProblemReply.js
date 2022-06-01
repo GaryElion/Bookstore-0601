@@ -31,6 +31,8 @@ function CreateProblemReply(problemId,reply) {
     })
         .then(res => res.json())
         .then(res => {
+            console.log(res);
+            return res
             /*完成後接收傳回來的資料*/
         })
         .catch(e => {

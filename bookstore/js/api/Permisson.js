@@ -16,6 +16,8 @@ function CreatePermisson(roleId, functionId) {
         .then(res => res.json())
         .then(res => {
             /*完成後接收傳回來的資料*/
+            console.log(res);
+            return res
 
         })
         .catch(e => {
@@ -32,7 +34,8 @@ function GetPermisson(permisson) {
     })
         .then(res => res.json())
         .then(res => {
-
+            console.log(res);
+            return res
         })
         .catch(e => {
             console.error('Error:', error)
