@@ -1,53 +1,41 @@
-//取得所有角色 
-async function getRole() {
+//取得使用者角色 
+async function getUserRole() {
     var data;
-    await GetAllRole().then(r => data = r);
+    await GetUserRole().then(r => data = r);
     
-    GetAllRole()
+    GetUserRole()
         .then(r => data = r)
     data = r
     console.log(data);
-    printalldata(data);
+    //printalldata(data);
 }
-getRole();
-//新增角色
-async function createRole() {
+getUserRole();
+//新增後台角色
+async function createBackstageRole() {
     var data;
-    await CreateRole().then(r => data = r);
+    await CreateBackstageRole().then(r => data = r);
     
-    CreateRole()
+    CreateBackstageRole()
         .then(r => data = r)
     data = r
     console.log(data);
-    printalldata(data);
+    //printalldata(data);
 
 }
-createRole();
-//更新角色
-async function updateRole() {
-    var data;
-    await UpdateRole().then(r => data = r);
-    
-    UpdateRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
+createBackstageRole();
 
-}
-updateRole();
 //刪除角色
-async function deleteRole() {
+async function deleteUserRole() {
     var data;
-    await DeleteRole().then(r => data = r);
+    await DeleteUserRole().then(r => data = r);
     
-    DeleteRole()
+    DeleteUserRole()
         .then(r => data = r)
     data = r
     console.log(data);
-    printalldata(data);
+    //printalldata(data);
 }
-deleteRole();
+deleteUserRole();
 
 function printalldata(data){
     var text = document.getElementById("role");
@@ -61,4 +49,5 @@ function printalldata(data){
         }
         //text.innerHTML=dataa;
     }
+
 }

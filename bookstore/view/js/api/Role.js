@@ -62,19 +62,6 @@ function CreateRole(roleName) {
             console.error('Error:', e)
         })
 }
-// CreateRole
-async function createRole() {
-    var data;
-    await CreateRole().then(r => data = r);
-    
-    CreateRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
-
-}
-createRole();
 /*更新角色*/
 function UpdateRole($roleupdate) {
     const token = getCookie('token')
@@ -105,19 +92,7 @@ function UpdateRole($roleupdate) {
             console.error('Error:', e)
         })
 }
-// UpdateRole
-async function updateRole() {
-    var data;
-    await UpdateRole().then(r => data = r);
-    
-    UpdateRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
 
-}
-updateRole();
 /*刪除角色*/
 function DeleteRole(id) {
     const token = getCookie('token');
@@ -136,19 +111,6 @@ function DeleteRole(id) {
             console.error('Error:', e)
         })
 }
-// DeleteRole
-async function deleteRole() {
-    var data;
-    await DeleteRole().then(r => data = r);
-    
-    DeleteRole()
-        .then(r => data = r)
-    data = r
-    console.log(data);
-    printalldata(data);
-
-}
-deleteRole();
 //取得Cookie
 function getCookie(cookiename) {
     let name = cookiename + "=";
