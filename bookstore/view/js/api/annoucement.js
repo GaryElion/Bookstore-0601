@@ -1,3 +1,5 @@
+const apidomain = 'http://localhost:8080'
+//取得所有公告
 function GetAnnoucement() {
     var token = getCookie('token');
     return fetch(apidomain + '/announcement', {
@@ -16,6 +18,7 @@ function GetAnnoucement() {
         })
 }
 
+//進入公告頁面
 function GetByIdAnnoucement(id) {
     var token = getCookie('token');
     return fetch(apidomain + '/announcement/' + id, {
@@ -34,6 +37,7 @@ function GetByIdAnnoucement(id) {
         })
 }
 
+//新增公告
 function PostAnnoucement(title, content) {
     const token = getCookie('token');
     var data = new FormData();
@@ -56,6 +60,7 @@ function PostAnnoucement(title, content) {
         })
 }
 
+//更新公告
 function PATCHAnnoucement(id, data) {
     const token = getCookie('token')
     var formBody = []
@@ -84,6 +89,7 @@ function PATCHAnnoucement(id, data) {
         })
 }
 
+//刪除公告
 function DELETEAnnoucement(id) {
     const token = getCookie('token');
     return fetch(apidomain + '/announcement/' + id, {

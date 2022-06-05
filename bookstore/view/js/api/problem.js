@@ -1,4 +1,5 @@
 
+//取得使用者問題回報
 function GetUserProblem(state) {
     var token = getCookie('token');
     return fetch(apidomain + '/problemlistu/' + state, {
@@ -17,6 +18,7 @@ function GetUserProblem(state) {
         })
 }
 
+//管理員查看問題回報
 function GetAdminProblem(state) {
     var token = getCookie('token');
     return fetch(apidomain + '/problemlista/' + state, {
@@ -35,6 +37,7 @@ function GetAdminProblem(state) {
         })
 }
 
+//管理員查看問題回報
 function GetByIdProblem(id) {
     var token = getCookie('token');
     return fetch(apidomain + '/problemlist/' + id, {
@@ -53,6 +56,7 @@ function GetByIdProblem(id) {
         })
 }
 
+//新增問題回報
 function PostProblem(Title, content) {
     const token = getCookie('token');
     var data = new FormData();
@@ -75,6 +79,7 @@ function PostProblem(Title, content) {
         })
 }
 
+//更新問題回報
 function PATCHProblem(id, data) {
     const token = getCookie('token')
     var formBody = []
@@ -103,6 +108,7 @@ function PATCHProblem(id, data) {
         })
 }
 
+//刪除問題回報
 function DELETEProblem(id) {
     const token = getCookie('token');
     return fetch(apidomain + '/problemlist/' + id, {
