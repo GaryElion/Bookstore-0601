@@ -111,10 +111,10 @@
             <td colspan="3">
               <div class="inputuser closeinput">
                 <form>
-                  <div class="formgroup">
+                  <div class="formgroup" id="role">
                     <label>角色</label>
-                    <select id="role">
-                      <option></option>
+                    <select>
+                      <option>超級使用者</option>
                     </select>
                   </div>
                   <div class="formgroup">
@@ -129,6 +129,17 @@
                       <input type="checkbox" id="c4" name="auth" />
                       <label for="c4"><span>問題回報</span></label>
                     </div>
+                    <!-- <div class="formgroup">
+                      <label for="authselect">允許權限：</label>
+                      <div class="selectgroup">
+                        <select>
+                          <option id="c1" name="auth">權限管理</option>
+                          <option id="c2" name="auth">公告管理</option>
+                          <option id="c3" name="auth">報表分析</option>
+                          <option id="c4" name="auth">問題回報</option>
+                        </select>
+                      </div>
+                    </div> -->
                   </div>
                   <div class="formgroup">
                     <label for="authexplain">備註：</label>

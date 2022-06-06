@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #ecfaff;
+
+}
+.accordion{
+    width: 300px;
+    margin: 80px auto 0;
+}
+.accordion label{
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ccc;
+    margin-top: 10px;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.content{
+    height: 0px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: 0.5s;
+}
+input[type='radio']:checked +.content{
+    background-color: #fa0;
+    height: 100px;
+}
+input[type='radio']{
+    display: none;
+}
